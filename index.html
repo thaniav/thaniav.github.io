@@ -27,6 +27,21 @@ html[data-season="halloween"]{--paper:#f6eadb;--ink:#3e3d35;--line:#d8c6b0;--mut
 html[data-season="christmas"]{--paper:#f2f4eb;--ink:#284636;--line:#c4d0bf;--muted:#617160}html[data-season="christmas"] header{background:#dce5d6;border-bottom:3px solid #b57c68}html[data-season="christmas"] .experience-row{background:#e4ecdd;border-color:#c1cfb8}html[data-season="christmas"] .button.solid{background:#805449;border-color:#805449}html[data-season="christmas"] .season-note{color:#805449}
 html[data-season="new-year"]{--paper:#f5f0e3;--ink:#423e50;--line:#d6cbb5;--muted:#716879}html[data-season="new-year"] header{background:#e9e1ce;border-bottom:3px solid #b59a61}html[data-season="new-year"] .experience-row{background:#eee9f0;border-color:#d2c8d5}html[data-season="new-year"] .button.solid{background:#575063;border-color:#575063}html[data-season="new-year"] .season-note{color:#8a6c31}
 @media(prefers-reduced-motion:no-preference){.season-scene:hover .season-picture{animation:season-sway .8s ease 1}}@keyframes season-sway{0%,100%{transform:rotate(0)}40%{transform:rotate(-3deg)}75%{transform:rotate(2deg)}}@media(max-width:760px){html[data-season]:not([data-season=""]) .hero{padding-right:0;min-height:0}html[data-season]:not([data-season=""]) .season-scene{position:static;transform:none;width:190px;margin:22px 0 0}}
+/* A friendly Halloween spider hangs at the edge of the page. */
+.halloween-spider{display:none;position:fixed;top:0;right:clamp(8px,3vw,42px);width:54px;height:190px;z-index:10;padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 0;color:#5b4d64}
+html[data-season="halloween"] .halloween-spider{display:block}
+.halloween-spider>svg{display:block;width:100%;height:100%}
+.halloween-spider:focus-visible{outline:2px solid #94613d;outline-offset:3px;border-radius:12px}
+.spider-web{position:fixed;width:240px;height:240px;z-index:11;pointer-events:none;color:#fffaf0;filter:drop-shadow(0 1px 2px #5b4d6480)}
+@media(prefers-reduced-motion:no-preference){.spider-web{animation:web-shoot 2s ease-out both}}
+@keyframes web-shoot{0%{transform:scale(.05);opacity:0}15%{transform:scale(1);opacity:1}80%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:no-preference){.halloween-spider{animation:spider-float 5s ease-in-out infinite}}
+.halloween-spider.is-climbing{animation:none;transform:translateY(-110%);pointer-events:none}
+.halloween-spider[hidden]{display:none!important}
+@media(prefers-reduced-motion:no-preference){.halloween-spider.is-climbing{animation:spider-climb 1s ease-in .3s both}}
+@keyframes spider-climb{from{transform:translateY(0)}to{transform:translateY(-110%)}}
+@keyframes spider-float{0%,100%{transform:translateY(-16px) rotate(-4deg)}50%{transform:translateY(8px) rotate(4deg)}}
+@media(max-width:760px){.halloween-spider{width:34px;height:140px;right:6px}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header><nav class="wrap" aria-label="Main navigation"><a class="logo" href="#">thania<span>.</span></a><div class="links"><a href="#work">Projects</a><a href="#about">About me</a><a class="contact-link" href="#contact">Let’s talk <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a></div></nav></header><main id="main" class="wrap"><div class="hero"><div class="eyebrow"><span class="dot"></span> Software engineer · London, UK</div><h1>Hi, I’m <span class="name-flourish">Thania<svg viewBox="0 0 210 18" aria-hidden="true"><path d="M4 10Q73 1 205 8M22 15Q104 7 181 13"/></svg></span><span class="hello-spark" aria-hidden="true">✳</span></h1><p class="intro">I’m a Senior Software Engineer at HubSpot, based in London. I particularly enjoy understanding customer problems and working with product managers and designers to turn them into useful, thoughtful software.</p><div class="buttons"><a class="button solid" href="mailto:viithania@gmail.com">Get in touch <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a><a class="button" href="Thania_Vivek_CV.pdf" download>Download CV ↓</a></div><p class="season-note" id="season-note"></p><div class="season-scene" aria-hidden="true">
 <svg class="season-picture halloween-picture" viewBox="0 0 280 230"><circle cx="150" cy="105" r="85" fill="#e8c69a"/><circle cx="192" cy="55" r="25" fill="#fbebc8"/><path d="M46 112q9-15 18 0 9-15 18 0l-18-4Zm156-18q9-15 18 0 9-15 18 0l-18-4Z" fill="#5b4d64"/><path d="M142 169V99c0-44 61-44 61 0v70l-10-8-10 8-10-8-10 8-10-8Z" fill="#fffaf0" stroke="#d6b991" stroke-width="2"/><ellipse cx="164" cy="106" rx="3" ry="5" fill="#514550"/><ellipse cx="181" cy="106" rx="3" ry="5" fill="#514550"/><path d="M168 122q5 5 10 0" fill="none" stroke="#514550" stroke-width="2" stroke-linecap="round"/><path d="M74 157c-42-24-55 36-26 48 10 5 18 4 26 0 9 4 20 5 30 0 29-12 16-72-30-48" fill="#cc844b"/><path d="M74 158q-8-22 7-28M61 159q-17 22 0 46m24-46q17 22 0 46" fill="none" stroke="#94613d" stroke-width="3"/><path d="M40 213q95 8 194-3" fill="none" stroke="#a89279" stroke-width="2"/><path d="m109 36 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#aa7d49"/></svg>
 <svg class="season-picture christmas-picture" viewBox="0 0 280 230"><circle cx="143" cy="113" r="87" fill="#d5e2cf"/><path d="m144 35-46 64h22l-45 53h29l-36 43h151l-37-43h28l-44-53h22Z" fill="#55745b"/><path d="M138 194v22h14v-22" fill="#947252"/><path d="m144 17 5 11 12 1-9 8 2 12-10-6-11 6 2-12-9-8 13-1Z" fill="#d7b571"/><path d="M117 90q26 19 55 1m-65 44q39 24 80 0m-92 40q49 25 103-1" fill="none" stroke="#dfc695" stroke-width="3"/><g fill="#c37e6a"><circle cx="126" cy="104" r="5"/><circle cx="164" cy="125" r="5"/><circle cx="119" cy="159" r="5"/><circle cx="175" cy="181" r="5"/></g><rect x="45" y="182" width="44" height="34" rx="3" fill="#c98d78"/><path d="M67 182v34m-22-21h44" stroke="#f5dec1" stroke-width="4"/><rect x="202" y="193" width="31" height="24" rx="2" fill="#c8b17a"/><path d="M217 193v24" stroke="#fff5df" stroke-width="3"/><g fill="#fffaf0"><circle cx="64" cy="74" r="3"/><circle cx="215" cy="83" r="3"/><circle cx="226" cy="139" r="3"/><circle cx="87" cy="39" r="2"/></g></svg>
@@ -37,7 +52,7 @@ html[data-season="new-year"]{--paper:#f5f0e3;--ink:#423e50;--line:#d6cbb5;--mute
 
 <section id="work"><div class="section-top"><h2>Projects <span class="heading-doodle" aria-hidden="true"><svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></span></h2></div><article class="project"><div><h3>Bird sighting web application</h3><p>Built an application to record and explore bird sightings, using the DBpedia knowledge graph to identify species.</p><p class="project-tech">Node.js · JavaScript · MongoDB · DBpedia</p></div><span class="date">Jan – Apr 2023</span></article><article class="project"><div><h3>Event detection in social media streams</h3><p>For my MSc dissertation, analyzed Twitter data using text representations, clustering, and topic modeling to identify events and extract insights.</p><p class="project-tech">Python · TF-IDF · Word2Vec · KMeans · LDA/NMF</p></div><span class="date">Jun – Sept 2023</span></article></section>
 <section id="about"><div class="about"><div><h2>About me</h2><p>I’m most engaged when I understand who we’re building for and what they need. I enjoy talking through problems with product managers and designers, helping the team find a way forward, and connecting technical decisions to the customer experience.</p><p>My experience spans frontend development with TypeScript and React at HubSpot and backend services with Java at Morgan Stanley. Along the way, I’ve enjoyed mentoring and taking on team leadership responsibilities.</p><p>Beyond engineering, I’ve tutored underprivileged children, taught Python with Enactus Sheffield, and been part of the Raaga music club. Away from the keyboard, you’ll find me reading, playing the ukulele, singing, or sketching.</p><div class="education"><strong>MSc, Advanced Computer Science</strong>University of Sheffield · 2022–2023<br><br><strong>BE, Computer Science · First class with distinction</strong>Amrita School of Engineering · 2017–2021</div></div><div class="skills"><h2>Skills</h2><div class="skill-row"><h3>Languages</h3><p>TypeScript · JavaScript · Python · Java · SQL</p></div><div class="skill-row"><h3>Frontend & design</h3><p>React · Vue.js · HTML · CSS · UI/UX Design</p></div><div class="skill-row"><h3>Backend & data</h3><p>Node.js · Spring Boot · Flask · MySQL · Oracle DB · IBM DB2 · MongoDB · Firebase</p></div><div class="skill-row"><h3>Tools & engineering</h3><p>Docker · Kubernetes · Git · Jira · Swagger · JUnit · Mockito</p></div><div class="skill-row"><h3>AI-assisted development</h3><p>Cursor · Claude Code</p></div></div></div></section>
-<div class="contact" id="contact"><h2>Say hello<span class="contact-spark" aria-hidden="true">✺</span></h2><p>Happy to chat about software, new opportunities, or a good book.</p><div class="buttons"><a class="button solid" href="mailto:viithania@gmail.com">viithania@gmail.com <span><svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></span></a></div></div></main><footer class="wrap"><span>© <span id="year">2026</span> Thania Vivek</span><div class="socials"><a href="https://www.linkedin.com/in/thania-v-61a9b91aa/" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a><a href="https://github.com/thaniav" target="_blank" rel="noopener noreferrer">GitHub <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a><a href="Thania_Vivek_CV.pdf" download>CV ↓</a></div></footer><script>
+<div class="contact" id="contact"><h2>Say hello<span class="contact-spark" aria-hidden="true">✺</span></h2><p>Happy to chat about software, new opportunities, or a good book.</p><div class="buttons"><a class="button solid" href="mailto:viithania@gmail.com">viithania@gmail.com <span><svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></span></a></div></div></main><footer class="wrap"><span>© <span id="year">2026</span> Thania Vivek</span><div class="socials"><a href="https://www.linkedin.com/in/thania-v-61a9b91aa/" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a><a href="https://github.com/thaniav" target="_blank" rel="noopener noreferrer">GitHub <svg class="magic-wand" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 20 11-11 3 3L8 23z" transform="translate(0 -2)"/><path class="wand-spark" d="M17 1v4m-2-2h4M6 5v4M4 7h4m13-1v3m-1.5-1.5h3"/></svg></a><a href="Thania_Vivek_CV.pdf" download>CV ↓</a></div></footer><button class="halloween-spider" type="button" aria-label="Shoot a spider web"><svg viewBox="0 0 64 220" aria-hidden="true" focusable="false"><path d="M32 0v161" fill="none" stroke="#b5a18a" stroke-width="1"/><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m23 177-12-9-6 6m18 10-15-3-5 8m21 2-14 5-3 9m18-7-9 11v7m25-39 12-9 6 6m-18 10 15-3 5 8m-21 2 14 5 3 9m-18-7 9 11v7"/></g><ellipse cx="32" cy="185" rx="13" ry="17" fill="currentColor"/><circle cx="28" cy="181" r="3" fill="#fffaf0"/><circle cx="37" cy="181" r="3" fill="#fffaf0"/><circle cx="29" cy="182" r="1.3" fill="#3e3544"/><circle cx="36" cy="182" r="1.3" fill="#3e3544"/><path d="M29 190q3 3 6 0" fill="none" stroke="#e8c69a" stroke-width="1.5" stroke-linecap="round"/></svg></button><script>
 function seasonForDate(date) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -67,6 +82,56 @@ function applySeason() {
   icon.innerHTML = seasonalDetails[season].icon;
   note.append(icon, document.createTextNode(seasonalDetails[season].text));
 }
+const spider = document.querySelector('.halloween-spider');
+let webTimer;
+let activeWeb;
+spider.addEventListener('click', () => {
+  if (spider.disabled) return;
+  clearTimeout(webTimer);
+  if (activeWeb) activeWeb.remove();
+  const bounds = spider.getBoundingClientRect();
+  const web = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  web.classList.add('spider-web');
+  web.setAttribute('viewBox', '-120 -120 240 240');
+  web.setAttribute('aria-hidden', 'true');
+  // Keep the burst inside the viewport, reaching outward from the spider.
+  const size = Math.min(240, window.innerWidth - 16, window.innerHeight - 16);
+  const left = Math.max(8, Math.min(bounds.left - size + bounds.width / 2, window.innerWidth - size - 8));
+  const top = Math.max(8, Math.min(bounds.top + bounds.height * .84 - size / 2, window.innerHeight - size - 8));
+  web.style.width = web.style.height = `${size}px`;
+  web.style.left = `${left}px`;
+  web.style.top = `${top}px`;
+  web.style.transformOrigin = `${bounds.left + bounds.width / 2 - left}px ${bounds.top + bounds.height * .84 - top}px`;
+  let strands = '';
+  for (let i = 0; i < 8; i++) {
+    const angle = i * Math.PI / 4;
+    strands += `M0 0L${Math.cos(angle) * 110} ${Math.sin(angle) * 110}`;
+  }
+  for (const radius of [25, 50, 80, 110]) {
+    for (let i = 0; i < 8; i++) {
+      const a = i * Math.PI / 4;
+      const b = (i + 1) * Math.PI / 4;
+      const mid = (a + b) / 2;
+      strands += `M${Math.cos(a) * radius} ${Math.sin(a) * radius}Q${Math.cos(mid) * radius * .72} ${Math.sin(mid) * radius * .72} ${Math.cos(b) * radius} ${Math.sin(b) * radius}`;
+    }
+  }
+  const path = document.createElementNS(web.namespaceURI, 'path');
+  path.setAttribute('d', strands);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'currentColor');
+  path.setAttribute('stroke-width', '1.5');
+  web.append(path);
+  document.body.append(web);
+  activeWeb = web;
+  spider.disabled = true;
+  spider.classList.add('is-climbing');
+  setTimeout(() => { spider.hidden = true; },
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1300);
+  webTimer = setTimeout(() => {
+    web.remove();
+    activeWeb = null;
+  }, 2000);
+});
 applySeason();
 // Refresh on a new day, including when a visitor returns to an open tab.
 setInterval(applySeason, 60000);
