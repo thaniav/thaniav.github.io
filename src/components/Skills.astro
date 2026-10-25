@@ -1,0 +1,13 @@
+---
+import { skills } from "../data/portfolio";
+---
+
+<div class="skills">
+  <h2>Skills</h2>
+  {skills.map((skill) => (
+    <div class="skill-row">
+      <h3>{skill.title}</h3>
+      <p>{skill.items}</p>
+    </div>
+  ))}
+</div>

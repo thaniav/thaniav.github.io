@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Spider from "../components/Spider.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Thania Vivek — Senior Software Engineer in London. Building thoughtful software with TypeScript, React, Java and a curiosity for AI."
+    />
+    <meta name="theme-color" content="#f6f4ed" />
+    <title>Thania Vivek — Software Engineer</title>
+    <link rel="canonical" href={Astro.site} />
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+    <Footer />
+    <Spider />
+    <script>
+      import { initializeSeasons } from "../scripts/seasons";
+      import { initializeSpider } from "../scripts/spider";
+      import { initializeSanta } from "../scripts/santa";
+      initializeSeasons();
+      initializeSpider();
+      initializeSanta();
+    </script>
+  </body>
+</html>

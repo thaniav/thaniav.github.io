@@ -1,0 +1,37 @@
+---
+import MagicWand from "./MagicWand.astro";
+import SeasonalScene from "./SeasonalScene.astro";
+---
+
+<div class="hero">
+  <div class="eyebrow">
+    <span class="dot"></span> Software engineer · London, UK
+  </div>
+  <h1>
+    Hi, I’m{" "}
+    <span class="name-flourish">
+      Thania
+      <svg viewBox="0 0 210 18" aria-hidden="true">
+        <path d="M4 10Q73 1 205 8M22 15Q104 7 181 13"></path>
+      </svg>
+    </span>
+    <span class="hello-spark" aria-hidden="true">
+      ✳
+    </span>
+  </h1>
+  <p class="intro">
+    I’m a Senior Software Engineer at HubSpot, based in London. I particularly
+    enjoy understanding customer problems and working with product managers and
+    designers to turn them into useful, thoughtful software.
+  </p>
+  <div class="buttons">
+    <a class="button solid" href="mailto:viithania@gmail.com">
+      Get in touch <MagicWand />
+    </a>
+    <a class="button" href="Thania_Vivek_CV.pdf" download>
+      Download CV ↓
+    </a>
+  </div>
+  <p class="season-note" id="season-note"></p>
+  <SeasonalScene />
+</div>

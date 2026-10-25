@@ -1,0 +1,48 @@
+---
+import { experiences } from "../data/portfolio";
+import WorkflowArt from "./WorkflowArt.astro";
+import FinanceArt from "./FinanceArt.astro";
+---
+
+<section id="experience">
+  <div class="section-top">
+    <div>
+      <h2>Experience</h2>
+    </div>
+  </div>
+  {experiences.map((experience) => (
+    <div class="experience-row">
+      <div class="experience-meta">
+        <div class="date">
+          {experience.date}
+          {experience.location && (
+            <>
+              <br />
+              {experience.location}
+            </>
+          )}
+        </div>
+        {experience.illustration === "workflow" ? (
+          <WorkflowArt />
+        ) : (
+          <FinanceArt />
+        )}
+      </div>
+      <div>
+        <div class="role-heading">
+          <h3>{experience.company}</h3>
+        </div>
+        <p class="role">{experience.role}</p>
+        <p>{experience.summary}</p>
+        <div class="role-detail-content">
+          {experience.details.map((detail) => (
+            <>
+              <h4>{detail.title}</h4>
+              <p>{detail.description}</p>
+            </>
+          ))}
+        </div>
+      </div>
+    </div>
+  ))}
+</section>

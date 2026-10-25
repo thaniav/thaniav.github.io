@@ -3,3 +3,8 @@
 dist/
 portfolio-github-pages/
 portfolio-github-pages.zip
+node_modules/
+.astro/
+.env
+.env.*
+!.env.example
