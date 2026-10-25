@@ -53,3 +53,15 @@ hosting migration is required. The Astro `site` setting points to the existing
 root domain, so no repository-name base path is needed.
 
 See the [Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+
+## Starwind UI
+
+Starwind's Astro components live in `src/components/starwind/`. The main calls to
+action use `Button`, and project cards use `Card`. Their source is editable here;
+the Card component supports `as="article"` to preserve project semantics.
+
+Add more components with `npx starwind@latest add <component> --framework astro`.
+Theme tokens in `src/styles/starwind.css` follow the portfolio's existing palette
+and seasonal colours. Tailwind utilities are available, but Preflight is omitted
+so installing components does not reset the existing page styles. Starwind's
+muted surface token is namespaced to avoid colliding with the portfolio text colour.

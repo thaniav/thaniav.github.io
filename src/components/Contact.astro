@@ -1,4 +1,5 @@
 ---
+import { Button } from "./starwind/button";
 import MagicWand from "./MagicWand.astro";
 ---
 
@@ -11,11 +12,15 @@ import MagicWand from "./MagicWand.astro";
   </h2>
   <p>Happy to chat about software, new opportunities, or a good book.</p>
   <div class="buttons">
-    <a class="button solid" href="mailto:viithania@gmail.com">
+    <Button
+      variant="primary"
+      class="button solid h-auto"
+      href="mailto:viithania@gmail.com"
+    >
       viithania@gmail.com{" "}
       <span>
         <MagicWand />
       </span>
-    </a>
+    </Button>
   </div>
 </div>
